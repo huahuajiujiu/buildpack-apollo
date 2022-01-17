@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+echo "---> Apollo App Buildpack"
+
+# 1. INIT LAYER
+LAYERS_DIR=$1
+
+APP_LAYER="${LAYERS_DIR}/preinstall"
+mkdir -p ${APP_LAYER}
+echo "launch = true" > "${APP_LAYER}.toml"
+
+# 2. INSTALL DEPENDECIES
+yarn add typescript
+
+# 3. SET DEFAULT START COMMAND

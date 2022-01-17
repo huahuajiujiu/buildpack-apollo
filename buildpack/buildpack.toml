@@ -1,0 +1,12 @@
+# Buildpack API version
+api = "1.0"
+
+# Buildpack ID and metadata
+[buildpack]
+id = "apollo/generic"
+version = "0.0.1"
+name = "Apollo Generic"
+
+# Stacks that the buildpack will work with
+[[stacks]]
+id = "io.buildpacks.stacks.bionic"
